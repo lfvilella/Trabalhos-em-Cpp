@@ -1,14 +1,15 @@
 # include <stdio.h>
 
 int main(){
-    int dia, feriado, semana;
+    int dia;
     float velomax, velo;
     printf("Insira o dia da semana (ex: dom = 1, seg = 2, ...): \n");
     scanf("%d", &dia);
     printf("Insira a sua velocidade: \n");
     scanf("%f", &velo);
-    if (dia == 2 || dia == 3|| dia == 4|| dia == 5|| dia == 6){
-        printf("Hoje é dia de semana, veloxidade máximo 60km/h !\n");
+    
+    if (dia >= 2 && dia <= 6){
+        printf("Hoje é dia de semana, velocidade máximo 60km/h !\n");
         velomax = 60;
         if (velo <= velomax){
             printf("Dentro da velocidade permitida !\n");
@@ -25,7 +26,7 @@ int main(){
     }
 
     else if (dia == 1 || dia == 7){
-        printf("Hoje é dia de semana, veloxidade máximo 60km/h !\n");
+        printf("Hoje é final de semana, velocidade máximo 80km/h !\n");
         velomax = 80;
         if (velo <= velomax){
             printf("Dentro da velocidade permitida !\n");
