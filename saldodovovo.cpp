@@ -1,31 +1,3 @@
-// # include <stdio.h>
-// # include <iostream>
-
-// using namespace std;
-
-// int main(){
-//     int dias = 0, saldo = 0, novosaldo = 0;
-//     cin >> dias >> saldo;
-//     novosaldo = saldo;
-    
-//     if ((dias >= 1 && dias <= 30) && (saldo >= -100000 && saldo <= 100000)){
-//         for(int i = 0; i < dias; i++){
-//             int value = 0;
-//             cin >> value;
-            
-//             novosaldo += value;
-
-//             if(novosaldo <= saldo){
-//                 saldo = novosaldo;
-//             }
-//             else if( novosaldo >= saldo){
-                
-//             }
-//         }
-//         cout << saldo << endl;
-//     }
-//     return 0;
-// }
 # include <stdio.h>
 # include <iostream>
 
@@ -38,17 +10,17 @@ int main(){
     if (dias < 1 || dias > 30) {
         return 0;
     }
-    int value = 0;
-    cin >> value;
+    int nova_transacao = 0;
+    cin >> nova_transacao;
 
-    saldo_atual = saldo_inicial + value;
+    saldo_atual = saldo_inicial + nova_transacao;
     menor_saldo = saldo_atual;
 
     for (int i = 1; i < dias; i++) {
-        value = 0;
-        cin >> value;
+        nova_transacao = 0;
+        cin >> nova_transacao;
 
-        saldo_atual += value;
+        saldo_atual += nova_transacao;
         if (saldo_atual < menor_saldo) {
             menor_saldo = saldo_atual;
         }
