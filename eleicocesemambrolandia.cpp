@@ -4,8 +4,9 @@
 using namespace std;
 
 int main(){
-    int voto_atual, qtdAlibaba = 0, qtdAlcapone = 0, votos_em_branco = 0 , votos_nulos = 0;
-    float percentual_Alibaba, percentual_Alcapone;
+    int voto_atual;
+    float qtdAlibaba = 0, qtdAlcapone = 0, votos_em_branco = 0 , votos_nulos = 0;
+    double percentual_Alibaba, percentual_Alcapone;
 
     while(voto_atual != -1){
         cin >> voto_atual;
@@ -31,6 +32,8 @@ int main(){
                 votos_nulos++;
                 break;
         }
+
+        
     }
     
     percentual_Alibaba = ((qtdAlibaba*100)/(qtdAlcapone+qtdAlibaba+votos_em_branco));
@@ -41,8 +44,8 @@ int main(){
     cout << votos_em_branco << endl;
     cout << votos_nulos << endl;
     qtdAlcapone >= qtdAlibaba ? printf("93\n") : printf("83\n");
-    printf("%.2f\n", percentual_Alibaba);
-    printf("%.2f\n", percentual_Alcapone);
+    printf("%.2lf\n", percentual_Alibaba);
+    printf("%.2lf\n", percentual_Alcapone);
 
 
     return 0;
