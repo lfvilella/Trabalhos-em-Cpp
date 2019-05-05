@@ -4,21 +4,20 @@ int main(){
     int num;
     printf("Digite um numero inteiro:\n");
     scanf("%d", &num);
-    while( num >= 0){
+
+    if( num >= 0){
         int i = 1;
         int fat = 1;
-        if (num == -1){
-            break;
-        }
         while( i <= num){
             fat = fat * i;
+            //printf("Sou i: %d e eu so fat: %d\n", i, fat );
             i++;
         }
-    printf("Fatorial: %d\n", fat);
-    break;
+        printf("Fatorial: %d\n", fat);
     }
-    if( num < -1){
+    else{
         printf("Fatorial: 1\n");
     }
+
     return 0;
 }
