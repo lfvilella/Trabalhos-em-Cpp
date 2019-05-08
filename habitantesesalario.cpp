@@ -28,28 +28,42 @@ int main(){
             if (sexo == 1){
                 printf("Insira o salario da mulher: \n");
                 scanf("%f", &woman_salary);
-                plus_woman_salary += woman_salary;
-                salary_current = woman_salary;
-                if (salary_current > higher_salary_woman){
-                    higher_salary_woman = salary_current;
+                if(woman_salary < 1){
+                    printf("Salario Invalido\n");
+                    plus_woman += 1;
+                    continue;
                 }
-                if (salary_current < lower_salary_woman){
-                    lower_salary_woman = salary_current;
+                else{
+                    plus_woman_salary += woman_salary;
+                    salary_current = woman_salary;
+                    if (salary_current > higher_salary_woman){
+                        higher_salary_woman = salary_current;
+                    }
+                    if (salary_current < lower_salary_woman){
+                        lower_salary_woman = salary_current;
+                    }
+                    plus_woman += 1;
                 }
-                plus_woman += 1;
             }
             else if (sexo == 0){
                 printf("Insira o salario do homem: \n");
                 scanf("%f", &man_salary);
-                plus_man_salary += man_salary;
-                salary_current = man_salary;
-                if (salary_current > higher_salary_man){
-                    higher_salary_man = salary_current;
+                if(man_salary < 1){
+                    printf("Salario Invalido\n");
+                    plus_man += 1;
+                    continue;
                 }
-                if (salary_current < lower_salary_man){
-                    lower_salary_man = salary_current;
+                else{
+                    plus_man_salary += man_salary;
+                    salary_current = man_salary;
+                    if (salary_current > higher_salary_man){
+                        higher_salary_man = salary_current;
+                    }
+                    if (salary_current < lower_salary_man){
+                        lower_salary_man = salary_current;
+                    }
+                    plus_man += 1;
                 }
-                plus_man += 1;
             }
             else{
                 continue;
