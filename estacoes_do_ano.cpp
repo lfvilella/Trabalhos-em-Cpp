@@ -1,21 +1,23 @@
 # include <stdio.h>
+# include <string>
+# include <string.h>
 # include <iostream>
 
 using namespace std;
 
-int Estacao_do_Ano(int day, int month);
+string Estacao_do_Ano(int day, int month);
 
 int main(){
     int dia, mes;
     cin >> dia >> mes;
 
-    printf("%d", Estacao_do_Ano(dia, mes));
+    printf("%s \n", Estacao_do_Ano(dia, mes).c_str());
 
     return 0;
 }
 
-int Estacao_do_Ano(int day, int month){
-    char estacao[11];
+string Estacao_do_Ano(int day, int month){
+    string estacao;
     if (day < 1 || day > 31){
         return 0;
     }

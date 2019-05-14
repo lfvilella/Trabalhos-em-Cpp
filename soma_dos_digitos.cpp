@@ -21,7 +21,7 @@ int Soma_Digitos(int numero){
     while(separa_num >= 10){ 
         if(separa_num >= 10){
             resto_do_resto = separa_num%10; // retira as casas do meio - 1 e 4
-            soma_resto += resto_do_resto; // soma as casas do meio - 1+4
+            soma_resto += resto_do_resto; // soma as casas do meio - 1+4 = 5
         }
         separa_num = separa_num/10; // retira a primeira casa - 3
         i++;
