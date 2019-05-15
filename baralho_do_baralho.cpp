@@ -1,6 +1,19 @@
 # include <stdio.h>
 
 int Cards(int cartas[3]){
+    // Deixando em ordem crescente as cartas
+    int variavel_temporaria;
+    for (int i=0; i < 3; i++){ // sao apenas 3 cartas
+        for (int j=i+1; j < 3; j++){
+            if(cartas[i] > cartas[j]){
+                variavel_temporaria = cartas[i];
+                cartas[i] = cartas[j];
+                cartas[j] = variavel_temporaria;
+            }
+        }
+    }
+
+    // Comeca a contar os pontos
     int contador_de_pontos = 0;
 
     if (cartas[0]+1 == cartas[1] && cartas[1]+1 == cartas[2]){
@@ -28,8 +41,8 @@ int Cards(int cartas[3]){
 }
 
 int Winner(int lista_a[3], int lista_b[3]){
-    int soma_paes[3] = Cards(lista_a[3]);
-    int soma_willy[3] = Cards(lista_b[3]);
+    int soma_paes = Cards(lista_a);
+    int soma_willy = Cards(lista_b);
     int resultado;
     if (soma_paes == soma_willy){
         resultado = 0;
