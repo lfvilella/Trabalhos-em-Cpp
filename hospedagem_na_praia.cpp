@@ -3,6 +3,7 @@
 # include <string>
 # include <string.h>
 # include <ctype.h>
+# include <algorithm>
 
 using namespace std;
 
@@ -16,7 +17,8 @@ int main(){
     getline(cin, tipo_do_apartamento);
     scanf("%d", &dias_hospedado);
 
-    tipo_do_apartamento = tolower(tipo_do_apartamento);
+    /// Deixa a string em minusculo
+    std::transform(tipo_do_apartamento.begin(), tipo_do_apartamento.end(), tipo_do_apartamento.begin(), ::tolower);
 
     printf("%.2f \n", Calcula_a_Hospedagem(tipo_do_apartamento, dias_hospedado));
 
@@ -26,60 +28,20 @@ int main(){
 float Calcula_a_Hospedagem(string apartamento, int dias){
     float desconto, total, diaria;
     if (apartamento == "individual"){
-        if(dias >= 3){
-            diaria = dias*125;
-            desconto = diaria*0.15;
-            total = diaria-desconto;
-        }
-        else{
-            total = dias*125;
-        }
+        total = dias*125;
     }
-    else if (apartamento == "suite dupla"){
-        if(dias >= 3){
-            diaria = dias*140;
-            desconto = diaria*0.15;
-            total = diaria-desconto;
-        }
-        else{
-            total = dias*140;
-        }
+    else if (apartamento == "suite dupla" || apartamento == "suitedupla" || apartamento == "suíte dupla" || apartamento == "suítedupla"){
+        total = dias*140;
     }
-    else if (apartamento == "suite tripla"){
-        if(dias >= 3){
-            diaria = dias*180;
-            desconto = diaria*0.15;
-            total = diaria-desconto;
-        }
-        else{
-            total = dias*180;
-        }
+    else if (apartamento == "suite tripla" || apartamento == "suitetripla" || apartamento == "suíte tripla" || apartamento == "suítetripla"){
+        total = dias*180;
+    }
+    if (dias >= 3){
+        total = total*0.85;
     }
     else{
-        return 0;
+        total = total;
     }
 
     return total;
 }
-
-// #include <iostream>
-// #include <string>
-// #include <ctype.h>
-// using namespace std;
-
-// int main(){
-//     int i = 0;
-//     string nome;
-//     char c;
-//     printf("digite a seu nome: ");
-//     getline(cin, nome);
-
-//     while (nome[i]){
-//         putchar(tolower(nome[i]));
-//         i++;
-//     }
-
-//     printf("\n");
-
-//     return 0;
-// }
