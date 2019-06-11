@@ -12,16 +12,16 @@ int main(){
     }
     if (k==1){
         for (i = 0, j = 0; i < n && j < m; i++ ,j++){
-            printf("%d\n%d\n", fila2[i], fila1[j]);
+            printf("%d\n%d\n", fila2[j], fila1[i]);
         }
-        if (i == m && j < n){
+        if (i == n && j < m){
             for(;j < m; j++){
-                printf("%d\n", fila1[j]);
+                printf("%d\n", fila2[j]);
             }
         }
-        else if (i < m && j==n){
-            for(;i < m; i++){
-                printf("%d\n", fila2[i]);
+        else if (i < n && j==m){
+            for(;i < n; i++){
+                printf("%d\n", fila1[i]);
             }
         }
     }
