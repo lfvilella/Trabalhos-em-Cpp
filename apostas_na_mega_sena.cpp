@@ -26,19 +26,22 @@ int main(){
 
     int vencedor = 0;
     int idx_loteria;
-    for (idx_loteria = 0; idx_loteria < 6; idx_loteria++){
-        for (i = 0; i < numero_de_apostas; i++){
-            for (j = 0; j < 10; j++){
+    for (i = 0; i < numero_de_apostas; i++){
+        int pontos = 0;
+        for (j = 0; j < 10; j++){
+            for (idx_loteria = 0; idx_loteria < 6; idx_loteria++){
                 if (apostas[i][j] == resultado_loteria[idx_loteria]){
-                    // Repair This
-                    vencedor++
+                    pontos++;
                 }
             }
+        }
+        if (pontos > 5){
+            vencedor++;
         }
     }
 
 
-    printf("Total de ganhadores: %d", vencedor);
+    printf("Total de ganhadores: %d\n", vencedor);
 
     return 0;
 }
