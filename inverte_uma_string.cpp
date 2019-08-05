@@ -1,24 +1,20 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
-#include <stdlib.h>
 
-int main() {
-    char frase[255];
-    char frase_invertida[255];
-    int i,tamanho, j=0;
+int main( void )
+{
+    char string[50];
+    char string2[50];
+    fgets(string, 50, stdin);
 
-    gets(frase);
-    tamanho = strlen(frase);
-
-    for ( i = tamanho; i >= 0; i--){
-        frase_invertida[j] = frase[i];
-        j++;
-        // printf ("%c",frase[i]);
+    int i, j=0;
+    for (i=strlen(string)-1; i >= 0; i--){
+        if (string[i] != ' '){
+            string2[j] = string[i];
+            j++;
+        }
     }
-    for (i=0; i < tamanho; i++){
-        printf("%d", frase_invertida[i]);
-    }
-    printf ("%s",frase_invertida);
+
+    printf("%s\n", string2);
     return 0;
 }
