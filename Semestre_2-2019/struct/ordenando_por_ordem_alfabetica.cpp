@@ -16,9 +16,8 @@ void Ordena(){
             }
         }
     }
-
-
 }
+
 int main(){
     printf("Digite 10 nomes:\n");
     for (int i = 0; i < 10; i++){
