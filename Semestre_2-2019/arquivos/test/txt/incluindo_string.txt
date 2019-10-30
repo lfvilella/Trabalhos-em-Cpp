@@ -1,0 +1,10 @@
+In this file will be treated more words/strings:
+First Line
+Second Line
+9
+Other Line
+Second Line
+9
+Teste
+Second Line
+9

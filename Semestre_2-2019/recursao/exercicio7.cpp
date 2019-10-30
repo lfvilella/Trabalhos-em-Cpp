@@ -1,6 +1,6 @@
 # include <stdio.h>
 
-void DecimalBinário(int number, int result, int array[], int idx);
+void DecimalBinario(int number, int result, int array[], int idx);
 
 int main(){
     int numero;
@@ -10,18 +10,18 @@ int main(){
     int idx = 0;
     int resultado = numero/2;
 
-    DecimalBinário(numero, resultado, vetor, idx);
+    DecimalBinario(numero, resultado, vetor, idx);
     printf("\n");
 
     return 0;
 }
 
-void DecimalBinário(int number, int result, int array[], int idx){
+void DecimalBinario(int number, int result, int array[], int idx){
     if (result != 0){
         array[idx] = number % 2;
         result = number/2;
         idx++;
-        DecimalBinário(result, number/2, array, idx);
+        DecimalBinario(result, number/2, array, idx);
     }
     else{
         for (int j = idx-1; j >= 0; j--){
