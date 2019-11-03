@@ -25,15 +25,8 @@ int main(){
 
     idx = 0;
     char c;
-    while ((c = getc(file)) != EOF){
-        arrayB[idx] = c;
-        if (arrayB[idx != c]){
-            printf("Gravado Incorreto");
-        }
-        printf("%c\n", c);
-        printf("B = %d\n", arrayB[idx]);
-        printf("A = %d\n", array[idx]);
-        idx++;
+    for (idx = 0; idx < 3; idx++){
+        fscanf(file, "%d", &arrayB[idx]);
     }
     fclose(file);
 
