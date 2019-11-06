@@ -48,7 +48,7 @@ void print_product(){
 
     if (!file){
         printf("Erro ao abrir.\n");
-        return;
+        return 0;
     }
 
     char c;
