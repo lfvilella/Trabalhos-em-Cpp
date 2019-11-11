@@ -1,5 +1,8 @@
 # include <stdio.h>
+# include <stdlib.h>
 # include <string.h>
+# include <iostream>
+# include "functions.h"
 
 int Cadastra_Produto(char *produto, int tipo_do_mercado, int codigo, float preco);
 int Lista_Compra();
@@ -9,7 +12,7 @@ int main(){
     printf("Quantidade na lista:\n");
     scanf("%d", &quantidade_lista_compras);
 
-    int tipo_do_mercado, codigo;
+    int tipo_do_mercado, codigo, quantia_produto;
     float preco;
     char produto[255];
     for (int idx = 0; idx < quantidade_lista_compras; idx++){
@@ -22,9 +25,17 @@ int main(){
         fgets(produto, 255, stdin);
         printf("Preço : ");
         scanf("%f", &preco);
-        Cadastra_Produto(produto, tipo_do_mercado, codigo, preco);
+        printf("Quantidade : ");
+        scanf("%d", &quantia_produto);
+
+        Cadastra_Produto(produto, tipo_do_mercado, codigo, (preco*quantia_produto));
     }
+    printf("!!! LISTA COMPRAS !!!\n");
     Lista_Compra();
+
+    printf("Mercado 1, total = %d\n", Total_Mercado1());
+    // printf("Mercado 2, total = %d\n", Total_Mercado2());
+    // printf("Mercado 3, total = %d\n", Total_Mercado3());
     return 0;
 }
 
@@ -80,7 +91,7 @@ int Cadastra_Produto(char *produto, int tipo_do_mercado, int codigo, float preco
                 printf("Erro ao abrir arquivo.\n");
                 return 0;
             }
-            fprintf(file, "%d\n%s%.2f\n", codigo, produto, preco);
+            fprintf(file, "%d|%.2f|%s", codigo, preco, produto);
             break;
         case 2:
             file = fopen("txt/mercado2.txt", "a");
@@ -88,7 +99,7 @@ int Cadastra_Produto(char *produto, int tipo_do_mercado, int codigo, float preco
                 printf("Erro ao abrir arquivo.\n");
                 return 0;
             }
-            fprintf(file, "%d\n%s%.2f\n", codigo, produto, preco);
+            fprintf(file, "%d|%.2f|%s", codigo, preco, produto);
             break;
         case 3:
             file = fopen("txt/mercado3.txt", "a");
@@ -96,7 +107,7 @@ int Cadastra_Produto(char *produto, int tipo_do_mercado, int codigo, float preco
                 printf("Erro ao abrir arquivo.\n");
                 return 0;
             }
-            fprintf(file, "%d\n%s%.2f\n", codigo, produto, preco);
+            fprintf(file, "%d|%.2f|%s", codigo, preco, produto);
             break;
     
         default:
